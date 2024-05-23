@@ -1,95 +1,49 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import ReactPlayer from "react-player";
 
 export default function Home() {
+  const urlArr = "https://www.youtube.com/watch?v=oUFJJNQGwhk";
+  const localUrl =
+    "https://careernet-streaming-bucket.s3.us-east-1.amazonaws.com/videos/output/ea01c862-4a7f-4ee1-ac76-df2775506acd/Default/HLS/ea01c862-4a7f-4ee1-ac76-df2775506acd.m3u8";
+  const url =
+    "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8";
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div className="mainContainer">
+      <h2>Player test</h2>
+      {/* <ReactPlayer
+        // height={auto}
+        width={350}
+        height={250}
+        controls={true}
+        className="list_player"
+        url={urlArr}
+      /> */}
+      <ReactPlayer
+        // height={auto}
+        width={350}
+        height={250}
+        controls={true}
+        className="list_player"
+        url={localUrl}
+        config={{
+          file: {
+            forceHLS: true, // Force use of HLS
+          },
+        }}
+      />
+      {/*  */}
+      <ReactPlayer
+        width={350}
+        height={250}
+        controls={true}
+        className="list_player"
+        url={url}
+        config={{
+          file: {
+            forceHLS: true, // Force use of HLS
+          },
+        }}
+      />
+    </div>
   );
 }
