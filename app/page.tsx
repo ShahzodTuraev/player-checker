@@ -61,7 +61,7 @@ function KakaoMap() {
         ref={container}
         style={{
           width: "100%",
-          height: "700px",
+          height: "600px",
         }}
       ></div>
       <br />
