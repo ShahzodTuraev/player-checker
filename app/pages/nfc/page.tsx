@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Scanning = () => {
   const [text, setText] = useState<null | string>(null);
-  if ("NDEFReader" in window) {
-    setText("hello bro");
-  }
+  useEffect(() => {
+    if (typeof window !== "undefined" && "NDEFReader" in window) {
+      setText("hello bro");
+    }
+  }, []);
   return <div>{text}</div>;
 };
 
