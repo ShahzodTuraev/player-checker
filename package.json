@@ -18,8 +18,12 @@
     "react-dom": "^18",
     "react-kakao-maps-sdk": "^1.1.27",
     "react-player": "^2.16.0",
+<<<<<<< HEAD
     "video.js": "^8.16.1",
     "videojs-contrib-hls": "^5.15.0"
+=======
+    "signature_pad": "^5.0.2"
+>>>>>>> 3759c0da42bbac46012cf5d07d3ad6e8f7e266e5
   },
   "devDependencies": {
     "@types/node": "^20",

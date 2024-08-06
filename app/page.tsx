@@ -1,4 +1,5 @@
 "use client";
+<<<<<<< HEAD
 
 import { useState } from "react";
 
@@ -42,6 +43,28 @@ export default function Home() {
       ))}
       <button onClick={handleAddInput}>Add Input</button>
       <button onClick={handleSubmit}>Submit</button>
+=======
+import React, { useState } from "react";
+import SignaturePadComponent from "./components/SignaturePad";
+
+export default function Home() {
+  const [savedImage, setSavedImage] = useState(null);
+
+  const handleSave = (dataUrl: any) => {
+    setSavedImage(dataUrl);
+  };
+
+  return (
+    <div>
+      <h1>Signature Pad</h1>
+      <SignaturePadComponent onSave={handleSave} />
+      {savedImage && (
+        <div>
+          <h2>Saved Signature:</h2>
+          <img src={savedImage} alt="Saved Signature" />
+        </div>
+      )}
+>>>>>>> 3759c0da42bbac46012cf5d07d3ad6e8f7e266e5
     </div>
   );
 }
